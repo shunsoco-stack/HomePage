@@ -56,107 +56,163 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white text-slate-900">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_10%_10%,rgba(59,130,246,0.15),transparent_45%),radial-gradient(1200px_circle_at_90%_20%,rgba(168,85,247,0.12),transparent_40%)]"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-transparent"></div>
         <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(148 163 184 / 0.1) 1px, transparent 0)',
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(148 163 184 / 0.12) 1px, transparent 0)',
           backgroundSize: '40px 40px'
         }}></div>
-        
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <div className="grid lg:grid-cols-5 gap-12 items-center">
-            <div className="lg:col-span-3">
-              <div className="mb-6">
-                <span className="text-xs font-semibold tracking-widest text-slate-500 uppercase">Automation Tools</span>
+
+        <div className="relative max-w-7xl mx-auto px-6">
+          <header className="flex items-center justify-between py-6 lg:py-8">
+            <a href="#" className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-black text-sm">
+                AT
               </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight mb-6">
-                業務の「手入力」を<br />最小化する<br />自動化ツールを作ります
+              <div className="leading-tight">
+                <div className="text-[10px] tracking-[0.3em] text-slate-500">AUTOMATION</div>
+                <div className="text-lg font-black text-slate-900">TOOLS</div>
+              </div>
+            </a>
+            <nav className="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+              <a href="#services" className="hover:text-slate-900 transition-colors">サービス</a>
+              <a href="#cases" className="hover:text-slate-900 transition-colors">実績</a>
+              <a href="#process" className="hover:text-slate-900 transition-colors">進め方</a>
+              <a href="#faq" className="hover:text-slate-900 transition-colors">FAQ</a>
+            </nav>
+            <div className="flex items-center gap-3">
+              <a
+                href="#contact"
+                className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-slate-700 rounded-full border border-slate-200 bg-white/70 hover:bg-white transition-all duration-300 whitespace-nowrap cursor-pointer"
+              >
+                無料相談
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center px-5 py-2.5 bg-slate-900 text-white text-sm font-semibold rounded-full hover:bg-slate-800 transition-all duration-300 shadow-lg shadow-slate-900/20 whitespace-nowrap cursor-pointer"
+              >
+                問い合わせ
+              </a>
+            </div>
+          </header>
+
+          <div className="grid lg:grid-cols-5 gap-12 items-center py-10 lg:py-20">
+            <div className="lg:col-span-3">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-4 py-2 text-xs font-semibold text-slate-600 shadow-sm backdrop-blur">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-600/60 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-600"></span>
+                </span>
+                最短1週間で導入 / 運用まで伴走
+              </div>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-slate-900 leading-tight mb-6">
+                業務の「手入力」を<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-500 to-purple-600">
+                  最小化
+                </span>
+                する<br />
+                自動化ツールを作ります
               </h1>
-              <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-10">
-                PDF→Excel/スプレッドシート、CSV整形、<br />
-                定型作業の自動化が得意です。
+              <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-10 max-w-xl">
+                PDF→Excel/スプレッドシート、CSV整形、OCR、定型作業の自動化に強い開発チームです。
+                現場の運用に合わせた「使える仕組み」を最短距離で届けます。
               </p>
               <div className="flex flex-wrap gap-4">
-                <a 
-                  href="#contact" 
-                  className="inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer"
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 text-white font-semibold rounded-2xl hover:bg-slate-800 transition-all duration-300 shadow-[0_20px_50px_rgba(15,23,42,0.25)] hover:-translate-y-0.5 whitespace-nowrap cursor-pointer"
                 >
                   相談する
+                  <i className="ri-arrow-right-up-line text-lg"></i>
                 </a>
-                <a 
-                  href="#contact" 
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl border-2 border-blue-600 hover:bg-blue-50 transition-all duration-300 whitespace-nowrap cursor-pointer"
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-white/80 text-blue-700 font-semibold rounded-2xl border border-blue-200 hover:border-blue-400 hover:bg-white transition-all duration-300 whitespace-nowrap cursor-pointer"
                 >
                   無料で見積もり相談
                 </a>
               </div>
+              <div className="mt-10 flex flex-wrap gap-3 text-sm text-slate-600">
+                {['PDF抽出', 'CSV整形', 'OCR読取', 'GAS連携', 'レポート自動化'].map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 shadow-sm"
+                  >
+                    <i className="ri-check-line text-blue-600"></i>
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-            
+
             <div className="lg:col-span-2 relative">
               <div className="relative">
                 <div className="absolute -top-8 -left-8 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
                 <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
-                
-                <div className="relative space-y-4">
-                  <div className="bg-white rounded-2xl shadow-2xl p-6 transform rotate-2 hover:rotate-0 transition-transform duration-300">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
-                        <i className="ri-file-pdf-line text-xl text-red-600"></i>
+
+                <div className="relative p-1 rounded-3xl bg-gradient-to-br from-white via-blue-100/60 to-purple-100/70 shadow-2xl">
+                  <div className="rounded-[22px] bg-white/80 backdrop-blur border border-white/80 p-6 space-y-4">
+                    <div className="bg-white/90 rounded-2xl shadow-2xl p-6 transform rotate-2 hover:rotate-0 transition-transform duration-300 border border-slate-100">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                          <i className="ri-file-pdf-line text-xl text-red-600"></i>
+                        </div>
+                        <span className="font-semibold text-slate-700">請求書.pdf</span>
                       </div>
-                      <span className="font-semibold text-slate-700">請求書.pdf</span>
-                    </div>
-                    <div className="space-y-2 text-sm text-slate-600">
-                      <div className="flex justify-between">
-                        <span>請求日:</span>
-                        <span className="font-medium">2025-01-15</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>取引先:</span>
-                        <span className="font-medium">株式会社ABC</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>金額:</span>
-                        <span className="font-medium">¥150,000</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white rounded-2xl shadow-2xl p-6 transform -rotate-2 hover:rotate-0 transition-transform duration-300">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                        <i className="ri-file-excel-2-line text-xl text-green-600"></i>
-                      </div>
-                      <span className="font-semibold text-slate-700">売上データ.xlsx</span>
-                    </div>
-                    <div className="grid grid-cols-3 gap-2 text-xs">
-                      <div className="bg-slate-50 p-2 rounded text-center">
-                        <div className="text-slate-500">1月</div>
-                        <div className="font-bold text-slate-700">¥2.5M</div>
-                      </div>
-                      <div className="bg-slate-50 p-2 rounded text-center">
-                        <div className="text-slate-500">2月</div>
-                        <div className="font-bold text-slate-700">¥3.1M</div>
-                      </div>
-                      <div className="bg-slate-50 p-2 rounded text-center">
-                        <div className="text-slate-500">3月</div>
-                        <div className="font-bold text-slate-700">¥2.8M</div>
+                      <div className="space-y-2 text-sm text-slate-600">
+                        <div className="flex justify-between">
+                          <span>請求日:</span>
+                          <span className="font-medium">2025-01-15</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>取引先:</span>
+                          <span className="font-medium">株式会社ABC</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>金額:</span>
+                          <span className="font-medium">¥150,000</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  <div className="bg-white rounded-2xl shadow-2xl p-6 transform rotate-1 hover:rotate-0 transition-transform duration-300">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <i className="ri-table-line text-xl text-blue-600"></i>
+
+                    <div className="bg-white/90 rounded-2xl shadow-2xl p-6 transform -rotate-2 hover:rotate-0 transition-transform duration-300 border border-slate-100">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                          <i className="ri-file-excel-2-line text-xl text-green-600"></i>
+                        </div>
+                        <span className="font-semibold text-slate-700">売上データ.xlsx</span>
                       </div>
-                      <span className="font-semibold text-slate-700">スプレッドシート</span>
+                      <div className="grid grid-cols-3 gap-2 text-xs">
+                        <div className="bg-slate-50 p-2 rounded text-center">
+                          <div className="text-slate-500">1月</div>
+                          <div className="font-bold text-slate-700">¥2.5M</div>
+                        </div>
+                        <div className="bg-slate-50 p-2 rounded text-center">
+                          <div className="text-slate-500">2月</div>
+                          <div className="font-bold text-slate-700">¥3.1M</div>
+                        </div>
+                        <div className="bg-slate-50 p-2 rounded text-center">
+                          <div className="text-slate-500">3月</div>
+                          <div className="font-bold text-slate-700">¥2.8M</div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center justify-center py-4">
-                      <div className="flex items-center gap-2 text-green-600">
-                        <i className="ri-check-double-line text-2xl"></i>
-                        <span className="font-semibold">自動更新完了</span>
+
+                    <div className="bg-white/90 rounded-2xl shadow-2xl p-6 transform rotate-1 hover:rotate-0 transition-transform duration-300 border border-slate-100">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                          <i className="ri-table-line text-xl text-blue-600"></i>
+                        </div>
+                        <span className="font-semibold text-slate-700">スプレッドシート</span>
+                      </div>
+                      <div className="flex items-center justify-center py-4">
+                        <div className="flex items-center gap-2 text-green-600">
+                          <i className="ri-check-double-line text-2xl"></i>
+                          <span className="font-semibold">自動更新完了</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -164,61 +220,104 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+          <div className="pb-16">
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { title: 'スモールスタート', detail: '小さな自動化から素早く改善', icon: 'ri-rocket-line' },
+                { title: '再現性の高い運用', detail: '現場フローに合わせた設計', icon: 'ri-shield-check-line' },
+                { title: '伴走サポート', detail: '納品後の改善・保守まで対応', icon: 'ri-customer-service-2-line' }
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="group rounded-2xl bg-white/80 backdrop-blur border border-white/80 p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center">
+                      <i className={`${item.icon} text-lg`}></i>
+                    </div>
+                    <div className="text-lg font-bold text-slate-900">{item.title}</div>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section id="about" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-xs font-semibold tracking-widest text-slate-500 uppercase">3つの強み</span>
+            <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">Why us</span>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-4 mb-4">3つの強み</h2>
+            <p className="text-lg text-slate-600">小さく始めて、継続的に育てる自動化。</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-blue-50 rounded-3xl p-10 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-md">
-                <i className="ri-settings-3-line text-3xl text-blue-600"></i>
+            <div className="group relative rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-100 hover:shadow-xl transition-all duration-300">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-50 via-white to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative">
+                <div className="w-16 h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center mb-6">
+                  <i className="ri-settings-3-line text-3xl text-blue-600"></i>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">小さな自動化でも対応</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  大規模なシステムだけでなく、日々の小さな手作業も自動化。コストを抑えながら効率化を実現します。
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">小さな自動化でも対応</h3>
-              <p className="text-slate-600 leading-relaxed">
-                大規模なシステムだけでなく、日々の小さな手作業も自動化。コストを抑えながら効率化を実現します。
-              </p>
             </div>
             
-            <div className="bg-blue-50 rounded-3xl p-10 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-md">
-                <i className="ri-equalizer-line text-3xl text-blue-600"></i>
+            <div className="group relative rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-100 hover:shadow-xl transition-all duration-300">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-50 via-white to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative">
+                <div className="w-16 h-16 bg-emerald-600/10 rounded-2xl flex items-center justify-center mb-6">
+                  <i className="ri-equalizer-line text-3xl text-emerald-600"></i>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">現場の運用に合わせて調整可能</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  実際の業務フローに合わせて柔軟にカスタマイズ。使いやすさを最優先に設計します。
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">現場の運用に合わせて調整可能</h3>
-              <p className="text-slate-600 leading-relaxed">
-                実際の業務フローに合わせて柔軟にカスタマイズ。使いやすさを最優先に設計します。
-              </p>
             </div>
             
-            <div className="bg-blue-50 rounded-3xl p-10 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-md">
-                <i className="ri-refresh-line text-3xl text-blue-600"></i>
+            <div className="group relative rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-100 hover:shadow-xl transition-all duration-300">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-50 via-white to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative">
+                <div className="w-16 h-16 bg-purple-600/10 rounded-2xl flex items-center justify-center mb-6">
+                  <i className="ri-refresh-line text-3xl text-purple-600"></i>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">継続運用を前提に設計</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  一度作って終わりではなく、長期的に安定して動作する仕組みを構築。保守性も重視します。
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">継続運用を前提に設計</h3>
-              <p className="text-slate-600 leading-relaxed">
-                一度作って終わりではなく、長期的に安定して動作する仕組みを構築。保守性も重視します。
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 lg:py-28 bg-slate-50">
+      <section id="services" className="py-20 lg:py-28 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <span className="text-xs font-semibold tracking-widest text-slate-500 uppercase">Services</span>
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-4 mb-3">できること</h2>
             <p className="text-xl text-slate-600 italic">提供する自動化サービス</p>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-600">
+              {['Excel/スプレッドシート', 'CSV', 'PDF', 'OCR', 'GAS連携'].map((item) => (
+                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm">
+                  <i className="ri-sparkling-line text-blue-600"></i>
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+            <div className="group relative bg-white rounded-3xl overflow-hidden shadow-sm ring-1 ring-slate-100 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-rose-400 via-rose-500 to-orange-400"></div>
               <div className="bg-rose-50 p-12 flex items-center justify-center group-hover:bg-rose-100 transition-colors duration-300">
                 <div className="w-20 h-20 flex items-center justify-center">
                   <i className="ri-file-text-line text-5xl text-rose-600"></i>
@@ -232,7 +331,8 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+            <div className="group relative bg-white rounded-3xl overflow-hidden shadow-sm ring-1 ring-slate-100 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 via-green-500 to-teal-400"></div>
               <div className="bg-green-50 p-12 flex items-center justify-center group-hover:bg-green-100 transition-colors duration-300">
                 <div className="w-20 h-20 flex items-center justify-center">
                   <i className="ri-file-chart-line text-5xl text-green-600"></i>
@@ -246,7 +346,8 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+            <div className="group relative bg-white rounded-3xl overflow-hidden shadow-sm ring-1 ring-slate-100 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-slate-400 via-blue-400 to-purple-400"></div>
               <div className="bg-slate-100 p-12 flex items-center justify-center group-hover:bg-slate-200 transition-colors duration-300">
                 <div className="w-20 h-20 flex items-center justify-center">
                   <i className="ri-scan-line text-5xl text-slate-600"></i>
@@ -264,7 +365,7 @@ export default function HomePage() {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section id="cases" className="py-20 lg:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-4">
@@ -277,7 +378,7 @@ export default function HomePage() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8">
+            <div className="bg-white rounded-2xl shadow-sm ring-1 ring-slate-100 hover:shadow-2xl transition-all duration-300 p-8">
               <div className="flex gap-1 mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <i key={star} className="ri-star-fill text-amber-400 text-lg"></i>
@@ -298,7 +399,7 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8">
+            <div className="bg-white rounded-2xl shadow-sm ring-1 ring-slate-100 hover:shadow-2xl transition-all duration-300 p-8">
               <div className="flex gap-1 mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <i key={star} className="ri-star-fill text-amber-400 text-lg"></i>
@@ -319,7 +420,7 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8">
+            <div className="bg-white rounded-2xl shadow-sm ring-1 ring-slate-100 hover:shadow-2xl transition-all duration-300 p-8">
               <div className="flex gap-1 mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <i key={star} className="ri-star-fill text-amber-400 text-lg"></i>
@@ -344,7 +445,7 @@ export default function HomePage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 lg:py-28 bg-slate-900">
+      <section id="process" className="py-20 lg:py-28 bg-slate-900">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-6 block">Process</span>
@@ -355,47 +456,60 @@ export default function HomePage() {
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-5 gap-6 mt-20">
-            <div className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-700 transition-all duration-300">
-              <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center mb-4">
-                <i className="ri-chat-3-line text-2xl text-white"></i>
+          <div className="relative mt-16">
+            <div className="hidden md:block absolute left-6 right-6 top-8 h-px bg-slate-700/70"></div>
+            <div className="grid md:grid-cols-5 gap-6">
+              <div className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-700 transition-all duration-300 relative">
+                <div className="text-xs font-semibold text-slate-400 mb-3">STEP 01</div>
+                <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center mb-4">
+                  <i className="ri-chat-3-line text-2xl text-white"></i>
+                </div>
+                <div className="text-lg font-semibold text-white">相談</div>
+                <p className="text-sm text-slate-400 mt-2">課題・目的を整理</p>
               </div>
-              <div className="text-lg font-semibold text-white">相談</div>
-            </div>
-            
-            <div className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-700 transition-all duration-300">
-              <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center mb-4">
-                <i className="ri-checkbox-multiple-line text-2xl text-white"></i>
+              
+              <div className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-700 transition-all duration-300 relative">
+                <div className="text-xs font-semibold text-slate-400 mb-3">STEP 02</div>
+                <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center mb-4">
+                  <i className="ri-checkbox-multiple-line text-2xl text-white"></i>
+                </div>
+                <div className="text-lg font-semibold text-white">仕様確認</div>
+                <p className="text-sm text-slate-400 mt-2">業務フローを可視化</p>
               </div>
-              <div className="text-lg font-semibold text-white">仕様確認</div>
-            </div>
-            
-            <div className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-700 transition-all duration-300">
-              <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center mb-4">
-                <i className="ri-file-list-3-line text-2xl text-white"></i>
+              
+              <div className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-700 transition-all duration-300 relative">
+                <div className="text-xs font-semibold text-slate-400 mb-3">STEP 03</div>
+                <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center mb-4">
+                  <i className="ri-file-list-3-line text-2xl text-white"></i>
+                </div>
+                <div className="text-lg font-semibold text-white">初稿</div>
+                <p className="text-sm text-slate-400 mt-2">動く形で試作</p>
               </div>
-              <div className="text-lg font-semibold text-white">初稿</div>
-            </div>
-            
-            <div className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-700 transition-all duration-300">
-              <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center mb-4">
-                <i className="ri-tools-line text-2xl text-white"></i>
+              
+              <div className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-700 transition-all duration-300 relative">
+                <div className="text-xs font-semibold text-slate-400 mb-3">STEP 04</div>
+                <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center mb-4">
+                  <i className="ri-tools-line text-2xl text-white"></i>
+                </div>
+                <div className="text-lg font-semibold text-white">調整</div>
+                <p className="text-sm text-slate-400 mt-2">実運用に合わせて最適化</p>
               </div>
-              <div className="text-lg font-semibold text-white">調整</div>
-            </div>
-            
-            <div className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-700 transition-all duration-300">
-              <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center mb-4">
-                <i className="ri-check-line text-2xl text-white"></i>
+              
+              <div className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-700 transition-all duration-300 relative">
+                <div className="text-xs font-semibold text-slate-400 mb-3">STEP 05</div>
+                <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center mb-4">
+                  <i className="ri-check-line text-2xl text-white"></i>
+                </div>
+                <div className="text-lg font-semibold text-white">納品</div>
+                <p className="text-sm text-slate-400 mt-2">運用開始・サポート</p>
               </div>
-              <div className="text-lg font-semibold text-white">納品</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section id="faq" className="py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">よくある質問</h2>
@@ -457,8 +571,9 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 lg:py-28 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-6">
+      <section id="contact" className="relative py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_85%_20%,rgba(59,130,246,0.12),transparent_40%)]"></div>
+        <div className="relative max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">お問い合わせ</h2>
             <p className="text-lg text-slate-600">まずは無料相談から。お気軽にお問い合わせください。</p>
