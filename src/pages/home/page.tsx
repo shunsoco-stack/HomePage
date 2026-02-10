@@ -10,6 +10,7 @@ export default function HomePage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+  const prototypeUrl = 'https://example.com';
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -79,6 +80,7 @@ export default function HomePage() {
             </a>
             <nav className="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
               <a href="#services" className="hover:text-slate-900 transition-colors">サービス</a>
+              <a href="#prototype" className="hover:text-slate-900 transition-colors">サンプル</a>
               <a href="#cases" className="hover:text-slate-900 transition-colors">実績</a>
               <a href="#process" className="hover:text-slate-900 transition-colors">進め方</a>
               <a href="#faq" className="hover:text-slate-900 transition-colors">FAQ</a>
@@ -358,6 +360,84 @@ export default function HomePage() {
                 <p className="text-sm text-slate-600 leading-relaxed">
                   画像化されたPDFやスキャン文書から文字を読み取り、データ化します。
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Prototype Section */}
+      <section id="prototype" className="py-20 lg:py-28 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+            <div>
+              <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">Prototype</span>
+              <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-4 mb-4">
+                実際に触れる<br />サンプル・プロトタイプ
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                これまで制作したツールの一部を、サンプルとして体験できます。
+                UIや自動化の流れを確認しながら、導入イメージを具体化できます。
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href={prototypeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-slate-900 text-white font-semibold shadow-lg shadow-slate-900/20 hover:bg-slate-800 transition-all duration-300"
+                >
+                  サンプルを見る
+                  <i className="ri-external-link-line"></i>
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl border border-slate-200 text-slate-700 font-semibold hover:border-slate-300 hover:text-slate-900 transition-all duration-300"
+                >
+                  URLの相談をする
+                  <i className="ri-arrow-right-up-line"></i>
+                </a>
+              </div>
+              <div className="mt-6 text-sm text-slate-500">
+                ※ URLは差し替え可能です。公開範囲に応じたアクセス設定も相談できます。
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute -top-6 -left-6 w-40 h-40 bg-blue-100 rounded-full blur-3xl opacity-60"></div>
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-purple-100 rounded-full blur-3xl opacity-60"></div>
+              <div className="relative rounded-3xl border border-slate-100 bg-slate-900 p-6 text-white shadow-2xl">
+                <div className="flex items-center justify-between text-xs text-slate-400 mb-6">
+                  <span>LIVE PREVIEW</span>
+                  <span className="inline-flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    Online
+                  </span>
+                </div>
+                <div className="space-y-4">
+                  <div className="rounded-2xl bg-white/10 p-4">
+                    <div className="text-xs text-slate-300 mb-2">ワークフロー</div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>PDF取込</span>
+                      <i className="ri-arrow-right-line"></i>
+                      <span>CSV整形</span>
+                      <i className="ri-arrow-right-line"></i>
+                      <span>シート反映</span>
+                    </div>
+                  </div>
+                  <div className="rounded-2xl bg-white/10 p-4">
+                    <div className="text-xs text-slate-300 mb-2">進行状況</div>
+                    <div className="h-2 rounded-full bg-white/10">
+                      <div className="h-2 rounded-full bg-gradient-to-r from-blue-400 to-emerald-400 w-4/5"></div>
+                    </div>
+                    <div className="text-xs text-slate-400 mt-2">80% 完了 / 12秒</div>
+                  </div>
+                  <div className="rounded-2xl bg-white/10 p-4">
+                    <div className="text-xs text-slate-300 mb-2">出力</div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <i className="ri-file-excel-2-line text-emerald-300"></i>
+                      見積_集計_2025.xlsx
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -683,6 +763,7 @@ export default function HomePage() {
                 <li><a href="#services" className="text-slate-400 hover:text-white transition-colors cursor-pointer">CSV整形</a></li>
                 <li><a href="#services" className="text-slate-400 hover:text-white transition-colors cursor-pointer">OCR読取</a></li>
                 <li><a href="#services" className="text-slate-400 hover:text-white transition-colors cursor-pointer">レポート自動化</a></li>
+                <li><a href="#prototype" className="text-slate-400 hover:text-white transition-colors cursor-pointer">サンプル</a></li>
               </ul>
             </div>
             
