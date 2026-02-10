@@ -10,7 +10,29 @@ export default function HomePage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
-  const prototypeUrl = 'https://example.com';
+  const prototypeMax = 20;
+  const prototypeItems = [
+    {
+      title: '請求書PDF→Excel自動転記',
+      description: '請求書PDFの主要項目を抽出し、Excelへ自動転記します。',
+      tags: ['PDF', 'Excel', '抽出'],
+      href: ''
+    },
+    {
+      title: '売上CSVの自動集計レポート',
+      description: 'CSV取り込みから集計、グラフ化までを自動化します。',
+      tags: ['CSV', '集計', 'レポート'],
+      href: ''
+    },
+    {
+      title: 'スキャンPDFのOCR抽出',
+      description: '画像化されたPDFから文字を読み取り、データ化します。',
+      tags: ['OCR', 'スキャン', '整形'],
+      href: ''
+    }
+  ];
+  const publishedCount = prototypeItems.filter((item) => item.href).length;
+  const remainingSlots = Math.max(0, prototypeMax - prototypeItems.length);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -369,7 +391,7 @@ export default function HomePage() {
       {/* Prototype Section */}
       <section id="prototype" className="py-20 lg:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
             <div>
               <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">Prototype</span>
               <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-4 mb-4">
@@ -379,66 +401,78 @@ export default function HomePage() {
                 これまで制作したツールの一部を、サンプルとして体験できます。
                 UIや自動化の流れを確認しながら、導入イメージを具体化できます。
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href={prototypeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-slate-900 text-white font-semibold shadow-lg shadow-slate-900/20 hover:bg-slate-800 transition-all duration-300"
-                >
-                  サンプルを見る
-                  <i className="ri-external-link-line"></i>
-                </a>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl border border-slate-200 text-slate-700 font-semibold hover:border-slate-300 hover:text-slate-900 transition-all duration-300"
-                >
-                  URLの相談をする
-                  <i className="ri-arrow-right-up-line"></i>
-                </a>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <div className="flex items-center gap-4 rounded-2xl bg-slate-900 px-4 py-3 text-white shadow-lg shadow-slate-900/15">
+                  <div className="text-xs text-slate-300">公開中</div>
+                  <div className="text-2xl font-bold">{publishedCount}</div>
+                </div>
+                <div className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-600">
+                  <div className="text-xs">準備中</div>
+                  <div className="text-2xl font-bold">{prototypeItems.length - publishedCount}</div>
+                </div>
+                <div className="flex items-center gap-4 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-3 text-slate-600">
+                  <div className="text-xs">追加枠</div>
+                  <div className="text-2xl font-bold">{remainingSlots}</div>
+                </div>
               </div>
               <div className="mt-6 text-sm text-slate-500">
-                ※ URLは差し替え可能です。公開範囲に応じたアクセス設定も相談できます。
+                ※ URLは差し替え可能です。最大{prototypeMax}件までカードを増やせます。
               </div>
             </div>
-            <div className="relative">
-              <div className="absolute -top-6 -left-6 w-40 h-40 bg-blue-100 rounded-full blur-3xl opacity-60"></div>
-              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-purple-100 rounded-full blur-3xl opacity-60"></div>
-              <div className="relative rounded-3xl border border-slate-100 bg-slate-900 p-6 text-white shadow-2xl">
-                <div className="flex items-center justify-between text-xs text-slate-400 mb-6">
-                  <span>LIVE PREVIEW</span>
-                  <span className="inline-flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                    Online
-                  </span>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {prototypeItems.map((item, index) => {
+                const status = item.href ? '公開中' : '準備中';
+                const statusStyle = item.href
+                  ? 'bg-emerald-50 text-emerald-700'
+                  : 'bg-slate-100 text-slate-500';
+
+                return (
+                  <div
+                    key={item.title}
+                    className="group rounded-2xl border border-slate-100 bg-white p-5 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="flex items-center justify-between text-xs text-slate-500 mb-3">
+                      <span>PROTOTYPE {String(index + 1).padStart(2, '0')}</span>
+                      <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-semibold ${statusStyle}`}>
+                        {status}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                    <div className="mt-4 flex flex-wrap gap-2 text-xs text-slate-500">
+                      {item.tags.map((tag) => (
+                        <span key={tag} className="rounded-full border border-slate-200 bg-white px-3 py-1">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="mt-6">
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition-all duration-300 hover:bg-slate-800"
+                        >
+                          開く
+                          <i className="ri-external-link-line"></i>
+                        </a>
+                      ) : (
+                        <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-400">
+                          URL準備中
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+              {remainingSlots > 0 && (
+                <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50 p-6 text-slate-500">
+                  <div className="text-xs font-semibold tracking-widest">COMING SOON</div>
+                  <div className="text-lg font-semibold mt-2">追加予定 {remainingSlots} 件</div>
+                  <p className="text-sm mt-2">ツール追加に合わせてカードを増やせます。</p>
                 </div>
-                <div className="space-y-4">
-                  <div className="rounded-2xl bg-white/10 p-4">
-                    <div className="text-xs text-slate-300 mb-2">ワークフロー</div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>PDF取込</span>
-                      <i className="ri-arrow-right-line"></i>
-                      <span>CSV整形</span>
-                      <i className="ri-arrow-right-line"></i>
-                      <span>シート反映</span>
-                    </div>
-                  </div>
-                  <div className="rounded-2xl bg-white/10 p-4">
-                    <div className="text-xs text-slate-300 mb-2">進行状況</div>
-                    <div className="h-2 rounded-full bg-white/10">
-                      <div className="h-2 rounded-full bg-gradient-to-r from-blue-400 to-emerald-400 w-4/5"></div>
-                    </div>
-                    <div className="text-xs text-slate-400 mt-2">80% 完了 / 12秒</div>
-                  </div>
-                  <div className="rounded-2xl bg-white/10 p-4">
-                    <div className="text-xs text-slate-300 mb-2">出力</div>
-                    <div className="flex items-center gap-2 text-sm">
-                      <i className="ri-file-excel-2-line text-emerald-300"></i>
-                      見積_集計_2025.xlsx
-                    </div>
-                  </div>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
