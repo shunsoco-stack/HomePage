@@ -13,10 +13,10 @@ export default function HomePage() {
   const prototypeMax = 20;
   const prototypeItems = [
     {
-      title: '請求書PDF→Excel自動転記',
-      description: '請求書PDFの主要項目を抽出し、Excelへ自動転記します。',
-      tags: ['PDF', 'Excel', '抽出'],
-      href: ''
+      title: 'PDF抽出・CSV出力デモ',
+      description: 'ブラウザでPDFをアップロード → 抽出結果を画面に表示 → CSV出力までできる簡易デモを作成しました。複数PDFを一括処理できるため、溜まりがちな請求書もまとめて処理できます。',
+      tags: ['PDF', 'CSV', '抽出'],
+      href: 'https://shunsoco-stack.github.io/crowdworks/demo.html'
     },
     {
       title: '売上CSVの自動集計レポート',
